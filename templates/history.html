@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transaction in transactions %}
+            <tr>
+                <td>{{ transaction["symbol"] }}</td>
+                <td>{{ transaction["name"] }}</td>
+                <td>{{ transaction["quantity"] }}</td>
+                <td>${{ transaction["price"] | round(2) }}</td>
+                <td>${{ transaction["total"] | round(2) }}</td>
+                <td>{{ transaction["time"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

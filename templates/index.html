@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>TOTAL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for mine in owned %}
+            <tr>
+                <td>{{ mine["symbol"] }}</td>
+                <td>{{ mine["name"] }}</td>
+                <td>{{ mine["shares"] }}</td>
+                <td>${{ mine["price"] | round(2) }}</td>
+                <td>${{ mine["total"] | round(2) }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>CASH</td>
+                <td colspan="3"></td>
+                <td>${{ money | round(2) }}</td>
+            </tr>
+            <tr>
+                <td colspan="4"></td>
+                <td><b>${{ total | round(2) }}</b></td>
+            </tr>
+        </tfoot>
+    </table>
+{% endblock %}
