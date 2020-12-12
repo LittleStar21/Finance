@@ -5,7 +5,7 @@
 ## Usage
 
 - Make sure to have the python libraries installed from requirements.txt.
-- Get the API_KEY from [iexcloud.io/cloud-login#/register/](iexcloud.io/cloud-login#/register/)
+- Get the API_KEY from https://iexcloud.io/cloud-login#/register/
 - In a terminal window, execute
 
 ```bash
